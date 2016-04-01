@@ -9,7 +9,6 @@ set ver2=%2
 set outputfile=sqlfiles_%ver1%_%ver2%.txt
 
 git diff --oneline --name-only %ver1%..%ver2% -- *.sql > %outputfile%
-pause
 @powershell -command "(gc ./%outputfile%).replace('.sql', '.sql') | Set-content ./%outputfile%
 
 GOTO END
